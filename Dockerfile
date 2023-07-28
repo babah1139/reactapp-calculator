@@ -8,7 +8,7 @@ COPY . .
 RUN yarn build
 
 #stage 2
-FROM nginx:1.19.0
+FROM nginx:1.24
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY --from=builder /calculator/build .
